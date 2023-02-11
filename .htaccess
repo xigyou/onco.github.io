@@ -1,1 +1,4 @@
-php_flag engine off
+RewriteCond %{SERVER_PORT} 443      
+RewriteCond %{HTTPS_HOST} ^oncovar\.org$ [OR]
+RewriteCond %{HTTPS_HOST} ^www\.oncovar\.org$ 
+RewriteRule ^(.*)$ http://oncovar.org/$1 [R,L]
